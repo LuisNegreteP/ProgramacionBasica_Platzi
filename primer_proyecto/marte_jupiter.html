@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Tu peso en un lugar donde pesas menos </title>                      <!-- título que aparece en la pestaña de la página-->
+  </head>
+  <body>
+    <h1> Tu peso en otro planeta </h1>                                          <!--encabezado de la página-->
+    <p> En la tierra pesas distinto que en Marte o Jupiter</p>                   <!--parrafo de la página-->
+    <script>
+      var usuario = prompt("¿Cual es tu peso?");                                <!--se pide el valor del peso y se guarda en la variable usuario-->
+      var planeta = parseInt(prompt("Elige tu planeta. \n1. Es Marte. 2. Es Jupiter."));  <!--se pide el planeta y se guarda en la variable planeta-->
+      var peso = parseInt(usuario);                                             <!--se transforma el peso en una variable entera para eliminar los decimales-->
+      var g_tierra = 9.8;                                                       <!--datos de las gravadades en los planetas-->
+      var g_marte = 3.7;
+      var g_jupiter = 24.8;
+      var peso_final;                                                           <!--peso resultante después de las operaciones correspondientes-->
+      var n_planeta="";                                                         <!--variable extra para colocar el nombre del planeta correspondiente-->
+
+      if(planeta == 1){                                                         <!--selectiva respecto a la variable planeta-->
+        peso_final= peso*g_marte/g_tierra;
+        n_planeta="Marte";
+      }
+      else if (planeta==2)
+      {
+        peso_final= peso*g_jupiter/g_tierra;
+        n_planeta="Jupiter";
+      }
+      else
+      {
+        peso_final=1000000;
+        n_planeta="Gallifrey";
+      }
+
+      peso_final= parseInt(peso_final);                                         <!--conversión del peso a entero, eliminando decimales-->
+
+      document.write ("Tu peso en "+ n_planeta +" es... <strong>" + peso_final + " kilos </strong>");      <!--respuesta donde se cambia el planeta y el resultado respecto a las opciones elegidas-->
+
+    </script>
+  </body>
+</html>
